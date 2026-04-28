@@ -128,4 +128,14 @@ Then open your browser at: [http://localhost:8001](http://localhost:8001)
 - Model selection (LLM + embeddings) is controlled via `config/config.yaml` — no code changes needed to switch providers.
 
 
+## 📈 Improvement
+
+- Retrival
+    -- how to fetch best chunk from vector DB
+- generation
+    -- Agentic rag, memory
+- UI
+    -- HTML, JAVA, strimlit
+- FastAPI
+
     
