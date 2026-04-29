@@ -137,5 +137,3 @@ Then open your browser at: [http://localhost:8001](http://localhost:8001)
 - UI
     -- HTML, JAVA, strimlit
 - FastAPI
-
-    
