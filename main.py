@@ -26,8 +26,13 @@ from fastapi.staticfiles import StaticFiles
 app = FastAPI()
 
 # region agent log
-DEBUG_LOG_PATH = "/Users/rishabh013/prod_new/genai/customer_support_system/.cursor/debug-3bca29.log"
 DEBUG_SESSION_ID = "3bca29"
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+LOG_DIR = os.path.join(BASE_DIR, "logs")
+os.makedirs(LOG_DIR, exist_ok=True)
+
+DEBUG_LOG_PATH = os.path.join(LOG_DIR, f"debug-{DEBUG_SESSION_ID}.log")
 
 
 def _debug_log(run_id: str, hypothesis_id: str, location: str, message: str, data: dict):
@@ -45,7 +50,6 @@ def _debug_log(run_id: str, hypothesis_id: str, location: str, message: str, dat
 # endregion
 
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 app.mount("/static", StaticFiles(directory=os.path.join(BASE_DIR, "static")), name="static")
 
 templates = Jinja2Templates(directory="templates")
